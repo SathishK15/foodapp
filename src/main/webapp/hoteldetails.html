@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="registerhotel.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>asian</title>
+</head>
+<body>
+<div id="context">
+
+<h1>Enter Hotel Details to Register</h1>
+
+    <label for="hotel_name">Hotel Name:</label>
+    <input type="text" name="hotel_name" id="hotel_name"><br>
+
+    <label for="hotel_address">Hotel Address:</label>
+    <input type="text" name="hotel_address" id="hotel_address"><br>
+
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" name="phone_number" id="phone_number"><br>
+
+    <button type="button" onclick="registerfun()" >Submit</button><br>
+    <button type="button" onclick="logout()">Logout</button>
+     <p id="hotelresult"></p>
+
+</div>
+     <script src="hotelfrontview.js" defer></script>
+    <script type="text/javascript" src="signupfront.js"></script>
+   
+</body>
+</html>

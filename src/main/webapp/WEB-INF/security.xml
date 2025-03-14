@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<security>
+	<url name="/namecheks">
+		<params>username,role,password</params>
+	</url>
+	<url name="/signupbac">
+		<params>role,password,username</params>
+	</url>
+	<url name="/loginstruts">
+		<params>password,username</params>
+	</url>
+	<url name="/hoteldetail">
+		<params>ph_num,address,hotel_name</params>
+	</url>
+	<url name="/fetchMenu">
+		<params>hotel_name</params>
+	</url>
+	<url name="/viewplacedorder">
+		<params></params>
+	</url>
+	<url name="/managerchecking">
+		<params></params>
+	</url>
+	<url name="/logoutexist">
+		<params></params>
+	</url>
+	<url name="/Mmenufodd">
+		<params>hotel_name</params>
+	</url>
+	<url name="/MremoveFood">
+		<params>food_id</params>
+	</url>
+	<url name="/MaddFood">
+		<params>food_price,food_name</params>
+	</url>
+	<url name="/Cgethotelname">
+		<params>hotel_id</params>
+	</url>
+	<url name="/chotelmenu">
+		<params>hotel_id</params>
+	</url>
+	<url name="/checkfirst">
+		<params>food_id</params>
+	</url>
+	<url name="/checkforcart">
+		<params></params>
+	</url>
+	<url name="/orderplaced">
+		<params></params>
+	</url> 
+	<url name="/displaycart">
+		<params></params>
+	</url>
+	<url name="/">
+		<params></params>
+	</url>
+	<url name="/cartaddd">
+		<params></params>
+	</url>
+	<url name="/removeFromCarttable">
+		<params>food_id</params>
+	</url>
+	<url name="/addtocarts">
+		<params></params>
+	</url>
+	<url name="/Chotelfetch">
+		<params></params>
+	</url>
+
+</security>

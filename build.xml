@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="foodapp" default="deploy" basedir=".">
+	<property name="src.dir" value="src/main/java" />
+	<property name="resources.dir" value="src/main/resources" />
+	<property name="web.dir" value="src/main/webapp" />
+	<property name="build.dir" value="build" />
+	<property name="lib.dir" value="${build.dir}/WEB-INF/lib" />
+	<property name="classes.dir" value="${build.dir}/WEB-INF/classes" />
+	<property name="dist.dir" value="dist" />
+	<property name="war.file" value="${build.dir}/foodapp.war" />
+	<property name="zip.file" value="foodapp.zip" />
+	<property name="dest.dir" value="C:/Users/sathi/OneDrive/Desktop/java/foodappnew"/>
+
+
+	<property name="tomcat.webapps" value="C:\Users\sathi\OneDrive\Desktop\server\apache-tomcat-9.0.99\apache-tomcat-9.0.99\webapps" />
+	<property name="tomcat.copy" value="C:\Users\sathi\OneDrive\Desktop\server\apache-tomcat-9.0.99" />
+	<!-- Clean ................. -->
+	<target name="clean">
+		 <delete dir="${build.dir}"/>
+		<echo>Cleaned build directory</echo>
+	</target>
+	<!-- complie............. -->
+
+	<target name="compile" depends="clean">
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" >
+			<classpath>
+				<fileset dir="${web.dir}/WEB-INF/lib" includes="*.jar" />
+				<pathelement location="C:\Users\sathi\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar" />
+				<pathelement location="C:\Users\sathi\.m2\repository\org\apache\struts\struts2-core\2.5.26\struts2-core-2.5.26.jar" />
+				<pathelement location="C:\Users\sathi\.m2\repository\org\apache\struts\struts2-json-plugin\2.5.26\struts2-json-plugin-2.5.26.jar" />
+				<pathelement location="C:\Users\sathi\.m2\repository\org\apache\struts\struts2-convention-plugin\2.5.26\struts2-convention-plugin-2.5.26.jar" />
+			</classpath>
+		</javac>
+		<echo> Compiled Java files</echo>
+	</target>
+	<target name="copy-resources" depends="compile">
+	    <copy todir="${classes.dir}">
+	        <fileset dir="${resources.dir}" />
+	    </copy>
+	    <echo>Copied (struts.xml, security.xml) to classes directory</echo>
+	</target>
+
+
+
+	<!-- war.......... -->
+	<target name="package" depends="copy-resources">
+		<mkdir dir="${build.dir}/WEB-INF" />
+
+		<copy todir="${build.dir}">
+			<fileset dir="${web.dir}" excludes="WEB-INF/**" />
+			<!-- static -->
+		</copy>
+
+		<copy todir="${build.dir}/WEB-INF">
+			<fileset dir="${web.dir}/WEB-INF" />
+			
+		</copy>
+
+
+		<mkdir dir="${lib.dir}" />
+		<copy todir="${lib.dir}">
+			<fileset dir="${web.dir}/WEB-INF/lib" includes="*.jar" />
+		</copy>
+
+
+		<war destfile="${war.file}" webxml="${build.dir}/WEB-INF/web.xml">
+			<fileset dir="${build.dir}" />
+		</war>
+		<echo> Packaged WAR: ${war.file}</echo>
+	</target>
+
+	<target name="zip-work" depends="package">
+		
+		    <copy todir="C:/Users/sathi/OneDrive/Desktop/java" overwrite="true">
+		        <fileset dir="${tomcat.copy}"/>
+		    </copy>
+		
+		   <mkdir dir="${dest.dir}"/>
+
+		        <echo message="Folder created successfully!"/>
+		<copy todir="${dest.dir}" overwrite="true">
+		        <fileset dir="C:/Users/sathi/OneDrive/Desktop/java/apache-tomcat-9.0.99"/>
+		    </copy>
+		 <zip destfile="${dest.dir}.zip" basedir="${dest.dir}"/>
+
+		    <echo message="ZIP file created: ${dest.dir}.zip"/>
+
+		</target>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Zip Project -->
+
+	<!--<target name="zip" depends="package">
+		<delete file="${dist.dir}/${zip.file}" />
+		<mkdir dir="${dist.dir}" />-->
+
+	<!--	<zip destfile="${dist.dir}/${zip.file}">
+		
+			<fileset dir="${build.dir}">
+				<include name="foodapp.war" />
+			</fileset>
+
+			
+			<fileset dir="src">
+				<include name="**/*" />
+			</fileset>
+
+			
+			<fileset dir=".">
+				<include name="WEB-INF/**" />
+				
+			</fileset>
+
+	         <fileset dir=".">
+				<include name="build.xml" />
+			</fileset>
+		</zip>
+
+		<echo>Project zipped as ${dist.dir}/${zip.file}</echo>
+	</target>-->
+
+
+
+
+	<target name="deploy-war" depends="package">
+
+		<copy file="${war.file}" todir="${tomcat.webapps}" />
+		<echo> Deployment complete!.... WAR copied to Tomcat.</echo>
+	</target>
+
+	<target name="deploy" depends="deploy-war, zip-work">
+		<echo> Deployment and ZIP completed.</echo>
+	</target>
+</project>

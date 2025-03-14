@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="hotel.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body >
+   <h1>
+   <div id="hotel_name_display">hotelname</div>
+   </h1>  
+<button  class="butt" type="button" onclick="showadd()">Add Food</button>
+
+<!--<button   class="butt" type="button" onclick="remove()">Remove</button>  -->
+<button  class="butt" type="button" onclick="logout()">logout</button><br>
+<!-- food name<input  type="text" name="food" id="food"> price<input type="number" name="price" id="price"><button type="button" class="butt" onclick="add()">submit</button> -->
+<div id="showaddmenu"></div>
+    <h2>Available Food Menu</h2>
+    <div>
+    <ul id="foodLi"><div class='food-item' ><span class='food-name'>food</span> - <span class='food-price'>price</span> <button class='remove-btn' >Remove button</button></ul>
+     <ul id="foodList"></ul>
+    
+    </div>
+    <div id="message"></div>
+     <script src="hotelfrontview.js" defer></script> 
+</body>
+</html>

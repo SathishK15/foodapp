@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(240, 240, 240);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;
+}
+  #cartItems
+  {
+ text-align: center;
+  padding: 10px 600 px;
+  font-size: 30px;
+  }
+
+.butt {
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.butt:hover {
+    background-color: #0056b3;
+}
+
+/* Food List */
+#foodList {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 20%;
+}
+#hotellist{
+	list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 20%;
+}
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    
+}
+.hotel-item{
+	 display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+}
+.fooditem
+{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+#quantity
+{
+	
+    border: 2px solid;
+    border-color: black; 
+	 background-color: #c0c0c0;
+    color: black;
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#foodstore
+{
+	 list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 30%;
+}
+.hotelview{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+}
+#foodLi {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 20%;
+}
+input ,#food,#price{
+	 background-color: white;
+    
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="frontview.css">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>asian</title>
+</head>
+
+<body id="bodysign">
+<h1>SIGNUP</h1>
+
+<label for="username">Enter username</label>
+<input type="text" name="signusername" id="signusername"><br>
+<label for="password">Enter password</label>
+<input type="password" name="signpassword" id="signpassword"><br>
+<label for="role">Select User Type:</label>
+            <select name="role" id="role">
+                <option value="User">User</option>
+                <option value="Manager">Manager</option>
+            </select><br>
+<br><button type="button" onclick="signupfun()">signup</button><br>
+ <p>already have account then?<h3><a href="loginpage.html" >login</a></h3>
+<script type="text/javascript" src="signupfront.js"></script>
+
+<p id="signupresult"></p>
+
+
+</body>
+</html>

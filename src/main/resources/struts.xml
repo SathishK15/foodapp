@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+<constant name="struts.action.excludePattern" value="/loginstruts.*|/signupbac.*|/logoutexist.*"/>
+
+	<package name="default" extends="json-default">
+
+<action name="managerchecking" class="com.sath.action.managerexist">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+
+		<action name="hoteldetail"
+			class="com.sath.action.resturantdetails">
+			<result type="json"></result>
+		</action>
+
+		<action name="Mmenufodd" class="com.sath.action.foodmenu">
+			<result type="json"></result>
+		</action>
+
+		<action name="MaddFood" class="com.sath.action.addfood">
+			<result name="success" type="json">
+				<param name="root">foodId</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+
+		<action name="MremoveFood" class="com.sath.action.removefood">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+
+		<action name="Chotelfetch"
+			class="com.sath.action.Choteldisplay">
+			<result type="json"></result>
+		</action>
+
+		<action name="Cgethotelname" class="com.sath.action.hotelname">
+			<result name="success" type="json">
+				<param name="root">hotel_name</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+
+		<action name="chotelmenu" class="com.sath.action.Cfoodmenu">
+			<result type="json"></result>
+		</action>
+	<action name="namecheks" class="com.sath.action.uniquename">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+		<action name="checkfirst" class="com.sath.action.checkcartuser">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+		<action name="cartaddd" class="com.sath.action.cartuser">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+		<action name="addtocarts" class="com.sath.action.Addtocart">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+
+		<action name="displaycart" class="com.sath.action.viewcattable">
+			<result type="json">
+			</result>
+		</action>
+
+		<action name="removeFromCarttable"
+			class="com.sath.action.Removecart">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+		<action name="checkforcart" class="com.sath.action.Chechorder">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+		<action name="orderplaced" class="com.sath.action.Placeorder">
+			<result name="success" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">responseMessage</param>
+			</result>
+		</action>
+
+		<action name="viewplacedorder"
+			class="com.sath.action.viewcattable">
+			<result type="json">
+			</result>
+		</action>
+
+	</package>
+</struts>

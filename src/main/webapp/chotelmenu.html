@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="hotel.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<h1>
+		<div id="hotel_name_display">hotelname</div>
+	</h1>
+	<button class="butt" type="button" onclick="placeorder()">place
+		order</button>
+<button class="butt" type="button" onclick="viewcart()">view cart</button>
+	<!--<button   class="butt" type="button" onclick="remove()">Remove</button>  -->
+	<button class="butt" type="button" onclick="logout()">logout</button>
+	<br>
+	<!-- food name<input  type="text" name="food" id="food"> price<input type="number" name="price" id="price"><button type="button" class="butt" onclick="add()">submit</button> -->
+
+
+	 <!-- Food Menu Section -->
+    <div id="menuSection">
+        <h2>Available Food Menu</h2>
+        <ul id="foodstore"></ul>
+    </div>
+
+    <!-- Cart Section (Hidden Initially) -->
+    <div id="cartSection">
+        <h2>Your Cart</h2>
+        <div id="cartContent"></div>
+        
+        <button class="butt" onclick="backtomenu()">Back to Menu</button>
+    </div>
+    <div id="message"></div>
+	<script src="chotelmenu.js"></script>
+	
+</body>
+</html>

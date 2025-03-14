@@ -1,0 +1,24 @@
+# Ignore IDE settings and metadata
+.classpath
+.project
+.settings/
+
+# Ignore build files and compiled code
+/target/
+/build/
+/dist/
+MainTest.java
+
+
+# Ignore Maven wrapper files
+.mvn/
+
+# Ignore logs and cache
+logs/
+*.log
+
+# Ignore temporary files
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
